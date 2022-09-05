@@ -43,12 +43,12 @@ class ProductoTest {
 
         return new Object[][]{
                 //(String codigo, double precio, String descripcion, Categoria categoria, Marca marca)
-                { "", 1, "descripcion", new Categoria("frutas"), new Marca("Frutiloqui")},    //sin descripcion
-                {"1", 1, "", new Categoria("frutas"), new Marca("Frutiloqui")},    //sin descripcion
-                {"1", 1, "descripcion", null, new Marca("Frutiloqui")},                   //sin categoria
-                {"1", 1, "descripcion", new Categoria("frutas"), null}                    //sin marca
+                { "", 1, "descripcion", new Categoria("gaseosa"), new Marca("cocacola")},    //sin codigo
+                {"1", 1, "", new Categoria("gaseosa"), new Marca("cocacola")},    //sin descripcion
+                {"1", 1, "descripcion", null, new Marca("cocacola")},                   //sin categoria
+                {"1", 1, "descripcion", new Categoria("gaseosa"), null}                    //sin marca
 
-                //como se hace para hacer la prueba de q no tenga precio o codigo?
+
 
         };
     }

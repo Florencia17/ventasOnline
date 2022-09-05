@@ -6,7 +6,7 @@ import java.util.List;
 
 public class Tienda {
 
-    //se hacen dos listas para mantener el registro historico de cada tipo de promociones
+    // listas con el registro historico de cada tipo de promociones
     private List<MarcaPromocion> marcaPromociones;
 
     private List<TarjetaPromocion> tarjetaPromociones;

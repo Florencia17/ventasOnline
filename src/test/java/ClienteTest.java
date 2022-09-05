@@ -14,12 +14,12 @@ class ClienteTest {
     //todos los casos de prueba:
     public static Object[] parametros() {
         return new Object[][] {
-                { "", "Garcia", "00000000", "mar@gmail.com" },  //sin nombre
-                { "Marti", "", "00000000", "mar@gmail.com" },   //sin apellido
-                { "Marti", "Garcia", "", "mar@gmail.com" },     //sin dni
-                { "Marti", "Garcia", "00000000", "mar@gmail" }, //email invalido
-                { "Marti", "Garcia", "00000000", "" },          //sin email
-                { "Marti", "Garcia", "000", "mar@gmail.com" },  //dni invalido
+                { "", "Malacarne", "00000000", "flor@gmail.com" },  //sin nombre
+                { "Flor", "", "00000000", "flor@gmail.com" },   //sin apellido
+                { "Flor", "Malacarne", "", "flor@gmail.com" },     //sin dni
+                { "Flor", "Malacarne", "00000000", "flor@gmail" }, //email invalido
+                { "Flor", "Malacarne", "00000000", "" },          //sin email
+                { "Flor", "Malacarne", "000", "flor@gmail.com" },  //dni invalido
         };
     }
 
@@ -31,8 +31,8 @@ class ClienteTest {
 
     @Test
     public void agregarTarjeta(){
-        Cliente cliente =  new Cliente("Martina", "Garcia", "12345678", "marti@gmail.com");
-        Tarjeta tarjeta = new Tarjeta(12, TipoTarjeta.MP);
+        Cliente cliente =  new Cliente("Florencia", "Malacarne", "12345678", "flor@gmail.com");
+        Tarjeta tarjeta = new Tarjeta(12, TipoTarjeta.MASTERCARD);
         cliente.agregarTarjeta(tarjeta);
         assertEquals(1, cliente.getTarjetas().size());
     }

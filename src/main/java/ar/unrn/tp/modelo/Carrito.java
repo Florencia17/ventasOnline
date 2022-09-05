@@ -54,7 +54,7 @@ public class Carrito {
 
     public Venta pagar(Cliente cliente, MarcaPromocion marcaPromocion, TarjetaPromocion tarjetaPromocion, Tarjeta tarjeta) {
 
-        if (tarjeta != null) { //deberia ser la validacion del servicio
+        if (tarjeta != null) {
             return new Venta(cliente, tarjeta, EstadoVenta.COMPLETA, productos, calcularMontoCarrito(marcaPromocion, tarjetaPromocion, tarjeta));
         }
         return new Venta(cliente, tarjeta, EstadoVenta.CANCELADA, productos, 0);
