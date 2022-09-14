@@ -25,6 +25,8 @@ public class Carrito {
                         producto.marca()));
     }
 
+    //Crear otra clase para agregar los productos al carrito, Productos Vendidos. duplicar.
+
 
     public double calcularMontoCarrito(MarcaPromocion marcaPromocion, TarjetaPromocion tarjetaPromocion, Tarjeta tarjeta) {
 

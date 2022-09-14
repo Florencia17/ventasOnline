@@ -1,16 +1,26 @@
 package ar.unrn.tp.modelo;
 
 
+import javax.persistence.*;
+
+@Entity
 public class Producto {
 
+    @Id
+    @GeneratedValue
+    private Long id;
     private String codigo;
     private String descripcion;
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Categoria categoria;
     private double precio;
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Marca marca;
 
-    public Producto(String codigo, double precio, String descripcion, Categoria categoria, Marca marca) {
+    protected Producto() {
 
+    }
+    public Producto(String codigo, double precio, String descripcion, Categoria categoria, Marca marca) {
         if (esDatoVacio(codigo))
             throw new RuntimeException("El codigo debe ser valido");
         this.codigo = codigo;
@@ -31,6 +41,7 @@ public class Producto {
             throw new RuntimeException("La marca debe ser valido");
         this.marca = marca;
     }
+
 
     private boolean esDatoVacio(String dato) {
         return dato.equals("");
@@ -60,6 +71,56 @@ public class Producto {
     public double precio() {
         return precio;
     }
+
+    public void setCodigo(String codigo) {
+        this.codigo = codigo;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setCategoria(Categoria categoria) {
+        this.categoria = categoria;
+    }
+
+    public void setPrecio(double precio) {
+        this.precio = precio;
+    }
+
+    public void setMarca(Marca marca) {
+        this.marca = marca;
+    }
+
+    public String getCodigo() {
+        return codigo;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public Categoria getCategoria() {
+        return categoria;
+    }
+
+    public double getPrecio() {
+        return precio;
+    }
+
+    public Marca getMarca() {
+        return marca;
+    }
+
+    public Long getId() {
+        return id;
+    }
+
+
+    private void setId(Long id) {
+        this.id = id;
+    }
+
 
   /*  @Override
     public String toString() {

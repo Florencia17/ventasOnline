@@ -1,7 +1,14 @@
 package ar.unrn.tp.modelo;
 
-public class Tarjeta {
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 
+@Entity
+public class Tarjeta {
+    @Id
+    @GeneratedValue
+    private Long id;
     private int numero;
     private TipoTarjeta tipo;
 
@@ -13,6 +20,10 @@ public class Tarjeta {
 
     public TipoTarjeta tipoTarjeta(){
         return tipo;
+    }
+
+    public Long getId() {
+        return id;
     }
 
    /* public int getNumero() {

@@ -1,16 +1,20 @@
 package ar.unrn.tp.modelo;
 
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
-
+@Entity
 public class Tienda {
-
+    @Id
+    @GeneratedValue
+    private Long id;
     // listas con el registro historico de cada tipo de promociones
+    @OneToMany(cascade = CascadeType.PERSIST)
     private List<MarcaPromocion> marcaPromociones;
-
+    @OneToMany(cascade = CascadeType.PERSIST)
     private List<TarjetaPromocion> tarjetaPromociones;
-
+    @OneToMany(cascade = CascadeType.PERSIST)
     private List<Venta> ventaList;
 
     public Tienda() {
@@ -48,6 +52,8 @@ public class Tienda {
     }
 
     public void setTarjetaPromocion(TarjetaPromocion tarjetaPromocion) {
+
+        System.out.println(tarjetaPromocion.toString());
         if (tarjetaPromocion == null)
             throw new RuntimeException("La promocion no puede ser vacia");
 

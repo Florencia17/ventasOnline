@@ -1,19 +1,29 @@
 package ar.unrn.tp.modelo;
 
 
+import javax.jdo.annotations.Unique;
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
+@Entity
 public class Cliente {
-
+    @Id
+    @GeneratedValue
+    private Long id;
+    @Unique
     private String nombre;
     private String apellido;
     private String dni;
     private String email;
+    @OneToMany(cascade = CascadeType.PERSIST)
     private List<Tarjeta> tarjetas;
 
+    protected Cliente() {
+
+    }
 
     public Cliente(String nombre, String apellido, String dni, String email) {
 
@@ -67,6 +77,31 @@ public class Cliente {
     public void agregarTarjeta(Tarjeta tarjeta) {
         this.tarjetas.add(tarjeta);
     }
+
+    public boolean tieneTarjeta(Tarjeta t) {
+        return this.tarjetas.contains(t);
+    }
+
+    public void setId(long id) {
+        this.id = id;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setDni(String dni) {
+        this.dni = dni;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
 
   /*  @Override
     public String toString() {
