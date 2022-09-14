@@ -1,4 +1,5 @@
 
+//import ar.unrn.tp.main.modelo.*;
 import ar.unrn.tp.modelo.*;
 import org.junit.jupiter.api.BeforeEach;
 import  org.junit.jupiter.api.Test ;
@@ -64,7 +65,7 @@ public class CarritoTest {
                         fecha2DiasAntes, fecha2DiasDesp, marcaGarnier),
                 new TarjetaPromocion(true,
                         fecha2DiasAntes, fecha2DiasDesp, TipoTarjeta.MACRO),
-                tarjeta //tarjeta de mp
+                tarjeta //tarjeta de mast
         ));
     }
 
@@ -79,14 +80,14 @@ public class CarritoTest {
                         fecha2DiasAntes, fecha2DiasDesp, marcaGarnier),
                 new TarjetaPromocion(true,
                         fecha2DiasAntes, fecha2DiasDesp, TipoTarjeta.MASTERCARD),
-                tarjeta //tarjeta de mp
+                tarjeta //tarjeta de mast
         ));
     }
 
     @Test
     public void descuentoDeProductosYCompra(){
         // Calcular el monto total, dos descuentos vigentes,
-        //marca Garnier y tarjeta de crédito MP.
+        //marca Garnier y tarjeta de crédito MT.
 
         carrito.agregarProductoAlCarrito(producto1);
         carrito.agregarProductoAlCarrito(producto2);
@@ -95,7 +96,7 @@ public class CarritoTest {
                         fecha2DiasAntes, fecha2DiasDesp, marcaGarnier),
                 new TarjetaPromocion(true,
                         fecha2DiasAntes, fecha2DiasDesp, TipoTarjeta.MASTERCARD),
-                tarjeta //tarjeta de mp
+                tarjeta //tarjeta de mast
         ));
     }
 
@@ -111,7 +112,7 @@ public class CarritoTest {
                         fecha2DiasAntes, LocalDate.now().minusDays(1), marcaGarnier),
                 new TarjetaPromocion(true,
                         fecha2DiasAntes, LocalDate.now().minusDays(1), TipoTarjeta.MASTERCARD),
-                tarjeta //tarjeta de mp
+                tarjeta //tarjeta de mast
         ));
     }
 

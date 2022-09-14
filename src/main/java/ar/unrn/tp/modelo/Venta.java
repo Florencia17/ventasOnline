@@ -1,18 +1,26 @@
 package ar.unrn.tp.modelo;
 
 
+import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
+@Entity
 public class Venta {
-
+    @Id
+    @GeneratedValue
+    private Long id;
     private Cliente cliente;
     private EstadoVenta estadoVenta;
     private Tarjeta tarjeta;
-
+    @OneToMany(cascade = CascadeType.PERSIST)
     private List<Producto> productosVendidos;
 
     private double montoAbonado;
+
+    protected Venta() {
+
+    }
 
 
     public Venta(Cliente cliente, Tarjeta tarjeta, EstadoVenta estadoVenta, List<Producto> productosVendidos, double montoAbonado) {
@@ -33,7 +41,7 @@ public class Venta {
 
     }
 
-   /* @Override
+    @Override
     public String toString() {
         return "Venta{" +
                 "cliente=" + cliente +
@@ -42,5 +50,6 @@ public class Venta {
                 ", productosVendidos=" + productosVendidos +
                 ", montoAbonado=" + montoAbonado +
                 '}';
-    }*/
+    }
+
 }
