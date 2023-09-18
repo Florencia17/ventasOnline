@@ -8,7 +8,7 @@ import ar.unrn.tp.modelo.Producto;
 import javax.persistence.*;
 import java.util.List;
 
-public class ProductoServicio implements ProductoInterfaz {
+public class ProductoService implements ProductoInterfaz {
 
     @Override
     public void crearProducto(String codigo, String descripcion, float precio, Long idCategoria, Long idMarca){

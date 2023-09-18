@@ -3,14 +3,10 @@ import ar.unrn.tp.api.ClienteInterfaz;
 import ar.unrn.tp.api.ProductoInterfaz;
 import ar.unrn.tp.api.VentaInterface;
 import ar.unrn.tp.jpa.servicios.ClienteServicio;
-import ar.unrn.tp.jpa.servicios.DescuentoServicio;
-import ar.unrn.tp.jpa.servicios.ProductoServicio;
+import ar.unrn.tp.jpa.servicios.ProductoService;
 import ar.unrn.tp.jpa.servicios.VentaServicio;
 import ar.unrn.tp.modelo.Producto;
 
-
-
-import java.awt.EventQueue;
 
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
@@ -127,7 +123,7 @@ public class ProductosUI extends JFrame {
         JButton irAlCarritoNewButton = new JButton("Ir al Carrito");
         irAlCarritoNewButton.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                TarjetasUI tarjetasUI = new TarjetasUI(new ProductoServicio(), new VentaServicio(), new ClienteServicio(), 1L, modeloProductosC);
+                TarjetasUI tarjetasUI = new TarjetasUI(new ProductoService(), new VentaServicio(), new ClienteServicio(), 1L, modeloProductosC);
                 tarjetasUI.setVisible(true);
             }
         });

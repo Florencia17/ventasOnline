@@ -1,14 +1,9 @@
 package ar.unrn.tp.main;
 
 import ar.unrn.tp.jpa.servicios.ClienteServicio;
-import ar.unrn.tp.jpa.servicios.DescuentoServicio;
-import ar.unrn.tp.jpa.servicios.ProductoServicio;
+import ar.unrn.tp.jpa.servicios.ProductoService;
 import ar.unrn.tp.jpa.servicios.VentaServicio;
 import ar.unrn.tp.ui.ProductosUI;
-
-import java.time.LocalDate;
-import java.util.ArrayList;
-import java.util.List;
 
 public class Main {
     public static void main(String[] args) {
@@ -52,7 +47,7 @@ public class Main {
 //        System.out.println(vs.calcularMonto(productos, 4L));
 //        System.out.println(vs.ventas());
 
-        ProductosUI ventanaProductos = new ProductosUI(new ProductoServicio(), new VentaServicio(), new ClienteServicio(), 1L );
+        ProductosUI ventanaProductos = new ProductosUI(new ProductoService(), new VentaServicio(), new ClienteServicio(), 1L );
         ventanaProductos.setVisible(true);
 
     }
